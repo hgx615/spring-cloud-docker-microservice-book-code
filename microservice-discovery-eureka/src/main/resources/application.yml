@@ -2,10 +2,10 @@ server:
   port: 8761                    # 指定该Eureka实例的端口
 eureka:
   client:
-    registerWithEureka: false
-    fetchRegistry: false
+    registerWithEureka: false   #表示是否将自己注册到Eureka Server,默认为true,由于当前应用就是Eureka Server,故而设为false
+    fetchRegistry: false  #表示是否从Eureka Server 获取注册信息，默认为true,因为这是一个单点的Eureka Server ， 不需要同步其他的Eureka Server 节点的数据，故而设为false
     serviceUrl:
-      defaultZone: http://localhost:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/   #设置与Eureka Server 交互的地址，查询服务和注册服务都需要依赖这个地址。默认是http://localhost:8761/eureka/ ； 多个地址可使用逗号, 分隔
 
 # 参考文档：http://projects.spring.io/spring-cloud/docs/1.0.3/spring-cloud.html#_standalone_mode
 # 参考文档：http://my.oschina.net/buwei/blog/618756
