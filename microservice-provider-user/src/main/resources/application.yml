@@ -23,4 +23,4 @@ eureka:
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
   instance:
-    prefer-ip-address: true
+    prefer-ip-address: true  # true 表示将自己的IP 注册到Eureka Server. 如不配置该属性或将其设置为false, 则表示注册微服务所在操作系统的hostname 到 Eureka Server
