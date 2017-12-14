@@ -1,7 +1,7 @@
 spring:
   application:
     name: microservice-discovery-eureka-ha
----
+---  #使用边字符（---）将该application.yml 文件分为三段，第二段和第三段分别为spring.properties 指定了一个值，该值表示它所在的那段内容应用在那个Profile 里。
 spring:
   profiles: peer1                                 # 指定profile=peer1
 server:

@@ -22,7 +22,11 @@ public class MovieController {
 
   @GetMapping("/user/{id}")
   public User findById(@PathVariable Long id) {
-    return this.restTemplate.getForObject("http://microservice-provider-user/" + id, User.class);
+    StringBuffer urlSb=new StringBuffer("http://");
+    ServiceInstance serviceInstance = this.loadBalancerClient.choose("microservice-provider-user");
+    urlSb.append(serviceInstance.getServiceId()).append("/").append(id);
+//    return this.restTemplate.getForObject("http://microservice-provider-user/" + id, User.class);
+    return this.restTemplate.getForObject(urlSb.toString(),User.class);
   }
 
   @GetMapping("/log-user-instance")
