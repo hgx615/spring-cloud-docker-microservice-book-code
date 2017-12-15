@@ -7,6 +7,6 @@ spring:
     config:
       server:
         git:
-          uri: https://git.oschina.net/itmuch/spring-cloud-config-repo      # 配置Git仓库的地址
-          username:                                                         # Git仓库的账号
-          password:                                                         # Git仓库的密码
+          uri: https://gitee.com/hgx615/spring-cloud-config-repo      # 配置Git仓库的地址
+          username: hgx615@126.com                                    # Git仓库的账号
+          password: 123456                                        # Git仓库的密码
